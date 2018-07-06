@@ -1,0 +1,45 @@
+html{
+  background-color: #ffff99;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: arial,sans-serif;
+}
+
+div.background{
+  height: 550px;
+  width: 450px;
+  background-color: #B22222;
+
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  margin-left:-225px;
+
+  border-style: solid;
+  border-color: black;
+}
+
+div.sketchArea{
+  height: 400px;
+  width: 400px;
+  background-color: white;
+
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-left:-200px;
+
+  border-style: solid;
+  border-color: black;
+}
+
+div.Buttons{
+  width: 400px;
+
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  margin-left:-200px;
+}
