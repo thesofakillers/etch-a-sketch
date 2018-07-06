@@ -4,42 +4,75 @@ html{
 
 * {
     box-sizing: border-box;
-    font-family: arial,sans-serif;
+    font-family: "Open Sans", Helvetica;
 }
 
 div.background{
-  height: 550px;
-  width: 450px;
+  height: 750px;
+  width: 700px;
   background-color: #B22222;
 
   position: fixed;
-  top: 20%;
+  top: 10%;
   left: 50%;
-  margin-left:-225px;
+  margin-left:-350px;
 
   border-style: solid;
   border-color: black;
 }
 
 div.sketchArea{
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 600px;
   background-color: white;
 
   position: absolute;
   top: 5%;
   left: 50%;
-  margin-left:-200px;
+  margin-left:-300px;
 
-  border-style: solid;
-  border-color: black;
+  box-shadow: 0px 0px 5px 5px black;
 }
 
 div.Buttons{
-  width: 400px;
+  width: 600px;
 
   position: absolute;
-  top: 85%;
+  top: 89%;
   left: 50%;
-  margin-left:-200px;
+  margin-left:-300px;
+}
+
+
+button {
+  position: relative;
+  padding: 15px 0px;
+  top: 0;
+  margin: 3px;
+  width: 140px;
+  font-size: 14pt;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  background: rgba( 22, 230, 137, 1 );
+  color: black;
+
+  -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+button:hover {
+  top: -10px;
+  box-shadow: 0px 10px 10px black;
+  border: none;
+}
+button:active {
+  top: 0px;
+  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+  background: rgba( 20, 224, 133, 1 );
+}
+button::-moz-focus-inner {
+  border: 0;
 }
