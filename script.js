@@ -31,7 +31,7 @@ function start(){ //what to do when pressing reset button
   }
 
   //fills the work area
-  var size = prompt("Enter the size N of the N x N grid you wish to create: ");
+  var size = prompt("Enter the size N (< ≈ 50) of the N x N grid you wish to create: ");
   var sketchArea = document.querySelector("div.sketchArea");
   var cellWidth = 100/size
   var gridCell;
