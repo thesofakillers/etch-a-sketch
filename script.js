@@ -1,3 +1,8 @@
+function changeColour(object){
+  object.style.backgroundColor = "black";
+}
+
+
 function resetSize(){
   //clears the work area
   var cells = document.getElementsByClassName('gridCell');
@@ -17,6 +22,11 @@ function resetSize(){
     gridCell.style.height = cellWidth.toString()+"%";
     sketchArea.appendChild(gridCell)
   }
+
+  const gridCells = document.querySelectorAll("div.gridCell")
+  gridCells.forEach(cell => cell.addEventListener('mouseover', function(){
+    changeColour(cell);
+  }));
 }
 
 const resetButton = document.querySelector("button#Reset");
