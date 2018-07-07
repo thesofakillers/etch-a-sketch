@@ -16,7 +16,7 @@ function changeColour(object, colourMode, darken){
   }
   if (colourMode){
     if (!darken){
-      gridCell.style.filter = "brightness(100%)"
+      object.style.filter = "brightness(100%)"
     }
     object.style.backgroundColor = getRandomColor();
   }
