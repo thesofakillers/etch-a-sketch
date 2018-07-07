@@ -13,7 +13,7 @@ div.background{
   background-color: #B22222;
 
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 50%;
   margin-left:-350px;
 
@@ -79,4 +79,18 @@ div.gridCell{
     border-style: dotted;
     border-color: lightgrey;
     border-width: thin;
+}
+
+
+div.instructions{
+
+  width: 720px;
+
+  position: fixed;
+  text-align: center;
+  font-size: 14pt;
+  bottom: 7%;
+
+  left: 50%;
+  margin-left: -360px;
 }
