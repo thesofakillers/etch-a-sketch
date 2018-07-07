@@ -1,26 +1,26 @@
-function getRandomColor () {
+function getRandomColor () {//taken from stackexchange
   var hex = Math.floor(Math.random() * 0xFFFFFF);
   return "#" + ("000000" + hex.toString(16)).substr(-6);
 }
 
 function changeColour(object, colourMode, darken){
   if (darken){
+    //gets the percentage of brigtness (from 0 to 100) from the filter style
     var percentage = object.style.filter.slice(10).replace(/[\(\)\%]+/g,'')
-    if (percentage != 0){
-      percentage -= 10
+    if (percentage != 0){ //if its not already fully black
+      percentage -= 10 //darken it by 10%
       object.style.filter = "brightness("+percentage+"%)"
     }
-  } else if (!(colourMode)) {
-    object.style.filter = "brightness(0%)";
+  } else if (!(colourMode)) { //if we're on monochrome
+    object.style.filter = "brightness(0%)"; //set to black
   }
-
   if (colourMode){
     object.style.backgroundColor = getRandomColor();
   }
 }
 
 
-function start(){
+function start(){ //what to do when pressing reset button
   //clears the work area
   var cells = document.getElementsByClassName('gridCell');
   while(cells[0]) {
@@ -70,7 +70,7 @@ function start(){
 
   //listens for "darken" button clicks
   darkenButton.addEventListener("click", function(){
-    if (darken == false){
+    if (darken == false){//toggles between darken mode
       darken = true;
       darkenButton.setAttribute('class', 'selected');
     } else {
