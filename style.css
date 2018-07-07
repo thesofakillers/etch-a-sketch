@@ -73,3 +73,10 @@ button:active {
 button::-moz-focus-inner {
   border: 0;
 }
+
+div.gridCell{
+    float: left;
+    border-style: dotted;
+    border-color: lightgrey;
+    border-width: thin;
+}
