@@ -15,6 +15,9 @@ function changeColour(object, colourMode, darken){
     object.style.filter = "brightness(0%)"; //set to black
   }
   if (colourMode){
+    if (!darken){
+      gridCell.style.filter = "brightness(100%)"
+    }
     object.style.backgroundColor = getRandomColor();
   }
 }
