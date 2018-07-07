@@ -1,5 +1,14 @@
 function changeColour(object, colourMode, darken){
-  object.style.backgroundColor = "black";
+  if (darken){
+    var percentage = object.style.filter.slice(10).replace(/[\(\)\%]+/g,'')
+    if (percentage != 0){
+      percentage -= 10
+      object.style.filter = "brightness("+percentage+"%)"
+    }
+  } else {
+    object.style.filter = "brightness(0%)";
+  }
+
   console.log("colourMode = " +colourMode);
   console.log("darken = " + darken);
   console.log("///")
@@ -23,6 +32,8 @@ function start(){
     gridCell.setAttribute('class', 'gridCell');
     gridCell.style.width = cellWidth.toString()+"%";
     gridCell.style.height = cellWidth.toString()+"%";
+    gridCell.style.backgroundColor = "white"
+    gridCell.style.filter = "brightness(100%)"
     sketchArea.appendChild(gridCell)
   }
 
