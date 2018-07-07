@@ -62,7 +62,7 @@ button {
       -ms-transition: all 0.2s ease;
           transition: all 0.2s ease;
 }
-button:hover {
+button:hover, button.selected{
   top: -10px;
   box-shadow: 0px 10px 10px black;
 }
@@ -70,6 +70,7 @@ button:active {
   top: 0px;
   box-shadow: none;
 }
+
 button::-moz-focus-inner {
   border: 0;
 }

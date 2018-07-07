@@ -1,3 +1,8 @@
+function getRandomColor () {
+  var hex = Math.floor(Math.random() * 0xFFFFFF);
+  return "#" + ("000000" + hex.toString(16)).substr(-6);
+}
+
 function changeColour(object, colourMode, darken){
   if (darken){
     var percentage = object.style.filter.slice(10).replace(/[\(\)\%]+/g,'')
@@ -5,13 +10,13 @@ function changeColour(object, colourMode, darken){
       percentage -= 10
       object.style.filter = "brightness("+percentage+"%)"
     }
-  } else {
+  } else if (!(colourMode)) {
     object.style.filter = "brightness(0%)";
   }
 
-  console.log("colourMode = " +colourMode);
-  console.log("darken = " + darken);
-  console.log("///")
+  if (colourMode){
+    object.style.backgroundColor = getRandomColor();
+  }
 }
 
 
@@ -37,29 +42,40 @@ function start(){
     sketchArea.appendChild(gridCell)
   }
 
+  //getting button objects
+  const monochromeButton = document.querySelector("button#Monochrome");
+  const randomButton = document.querySelector("button#Random");
+  const darkenButton = document.querySelector("button#Darken");
+
   //initiating parameters to pass to changeColour function
   var colourMode = false; //initiating as monochrome
+  monochromeButton.setAttribute('class', 'selected');
+  randomButton.classList.remove("selected");
   var darken = false; //initating with no darkening
+  darkenButton.classList.remove("selected");
 
   //listens for "monochrome" button clicks
-  const monochromeButton = document.querySelector("button#Monochrome");
   monochromeButton.addEventListener("click", function(){
     colourMode = false;
+    monochromeButton.setAttribute('class', 'selected');
+    randomButton.classList.remove("selected");
   });
 
   //listens for "random" button clicks
-  const randomButton = document.querySelector("button#Random");
   randomButton.addEventListener("click", function(){
     colourMode = true;
+    randomButton.setAttribute('class', 'selected');
+    monochromeButton.classList.remove("selected");
   });
 
   //listens for "darken" button clicks
-  const darkenButton = document.querySelector("button#Darken");
   darkenButton.addEventListener("click", function(){
     if (darken == false){
       darken = true;
+      darkenButton.setAttribute('class', 'selected');
     } else {
       darken = false;
+      darkenButton.classList.remove("selected");
     }
   });
 
